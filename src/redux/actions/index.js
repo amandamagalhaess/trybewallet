@@ -11,6 +11,19 @@ export const getCurrencies = (currencies) => ({
 });
 
 export const fetchCurrencies = () => async (dispatch) => {
-  const currencies = await getCurrenciesAPI();
+  const data = await getCurrenciesAPI();
+  const currencies = Object.keys(data).filter((currency) => currency !== 'USDT');
   dispatch(getCurrencies(currencies));
+};
+
+export const addExpenses = (expenses) => ({
+  type: 'ADD_EXPENSES',
+  expenses,
+});
+
+export const fetchExpenses = (expenses) => async (dispatch) => {
+  const data = await getCurrenciesAPI();
+
+  expenses.exchangeRates = data;
+  dispatch(addExpenses(expenses));
 };
