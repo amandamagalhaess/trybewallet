@@ -1,1 +1,4 @@
-// Coloque aqui suas actions
+export const actionCreator = (email) => ({
+  type: 'SAVE_EMAIL',
+  email,
+});
