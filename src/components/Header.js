@@ -6,7 +6,6 @@ import '../style/Header.css';
 class Header extends Component {
   render() {
     const { emailState } = this.props;
-    console.log(emailState);
     return (
       <header>
         <img src="" alt="" />

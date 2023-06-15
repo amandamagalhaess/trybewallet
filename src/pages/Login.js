@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
-import { actionCreator } from '../redux/actions';
+import { saveEmail } from '../redux/actions/index';
 
 class Login extends React.Component {
   state = {
@@ -31,7 +31,7 @@ class Login extends React.Component {
   handleLoginButton = () => {
     const { dispatch } = this.props;
     const { email } = this.state;
-    dispatch(actionCreator(email));
+    dispatch(saveEmail(email));
 
     this.setState({
       redirect: true,
