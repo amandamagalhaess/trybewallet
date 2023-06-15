@@ -19,9 +19,9 @@ class Login extends React.Component {
 
     this.setState((prev) => {
       const { email, password } = prev;
-      const re = /\S+@\S+\.\S+/;
+      const regex = /\S+@\S+\.\S+/;
       const n = 6;
-      if (re.test(email) && password.length >= n) {
+      if (regex.test(email) && password.length >= n) {
         return { isButtonDisabled: false };
       }
       return { isButtonDisabled: true };
