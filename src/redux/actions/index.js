@@ -27,3 +27,8 @@ export const fetchExpenses = (expenses) => async (dispatch) => {
   expenses.exchangeRates = data;
   dispatch(addExpenses(expenses));
 };
+
+export const removeExpense = (id) => ({
+  type: 'REMOVE_EXPENSE',
+  id,
+});
