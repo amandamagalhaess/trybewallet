@@ -32,3 +32,15 @@ export const removeExpense = (id) => ({
   type: 'REMOVE_EXPENSE',
   id,
 });
+
+export const activateEdit = (id) => ({
+  type: 'ACTIVATE_EDIT',
+  id,
+});
+
+export const editExpense = (expenses, expense) => {
+  expenses.splice(expense.id, 1, expense);
+  return ({
+    type: 'EDIT_EXPENSE',
+  });
+};

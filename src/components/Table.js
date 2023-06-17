@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeExpense } from '../redux/actions';
+import { activateEdit, removeExpense } from '../redux/actions';
 
 class Table extends Component {
   handleRemoveButton = (id) => {
     const { dispatch } = this.props;
     dispatch(removeExpense(id));
+  };
+
+  handleEditButton = (id) => {
+    const { dispatch } = this.props;
+    dispatch(activateEdit(id));
   };
 
   render() {
@@ -29,7 +34,7 @@ class Table extends Component {
         <tbody>
           {
             expenses.map((expense) => (
-              <tr key={ expense.id } value={ expense.id }>
+              <tr key={ expense.id }>
                 <td>{expense.description}</td>
                 <td>{expense.tag}</td>
                 <td>{expense.method}</td>
@@ -42,6 +47,12 @@ class Table extends Component {
                 </td>
                 <td>Real</td>
                 <td>
+                  <button
+                    data-testid="edit-btn"
+                    onClick={ () => this.handleEditButton(expense.id) }
+                  >
+                    Editar
+                  </button>
                   <button
                     data-testid="delete-btn"
                     onClick={ () => this.handleRemoveButton(expense.id) }
@@ -60,6 +71,7 @@ class Table extends Component {
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
+  editor: state.wallet.editor,
 });
 
 Table.propTypes = {

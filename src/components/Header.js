@@ -5,12 +5,13 @@ import '../style/Header.css';
 
 class Header extends Component {
   expensesSum = () => {
-    const { totalExpense } = this.props;
-    const expenses = totalExpense
+    const { expenses } = this.props;
+    const totalExpense = expenses
       .map((expense) => expense.value * expense.exchangeRates[expense.currency].ask);
 
-    const finalExpense = expenses.reduce((acc, curr) => acc + curr, 0);
-    return finalExpense.toFixed(2);
+    const sum = totalExpense.reduce((acc, curr) => acc + curr, 0);
+
+    return sum.toFixed(2);
   };
 
   render() {
@@ -37,12 +38,13 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
   emailState: state.user.email,
-  totalExpense: state.wallet.expenses,
+  expenses: state.wallet.expenses,
+  editor: state.wallet.editor,
 });
 
 Header.propTypes = {
   emailState: PropTypes.string.isRequired,
-  totalExpense: PropTypes.arrayOf(PropTypes.shape({
+  expenses: PropTypes.arrayOf(PropTypes.shape({
     value: PropTypes.string,
     exchangeRates: PropTypes.shape({
       ask: PropTypes.string,

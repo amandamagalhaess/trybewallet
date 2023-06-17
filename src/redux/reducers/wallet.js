@@ -16,6 +16,10 @@ const walletReducer = (state = INITIAL_STATE, action) => {
   case 'REMOVE_EXPENSE':
     return { ...state,
       expenses: state.expenses.filter((expense) => expense.id !== action.id) };
+  case 'ACTIVATE_EDIT':
+    return { ...state, editor: true, idToEdit: action.id };
+  case 'EDIT_EXPENSE':
+    return { ...state, editor: false, idToEdit: 0 };
   default:
     return state;
   }
