@@ -18,6 +18,21 @@ class WalletForm extends Component {
     dispatch(fetchCurrencies());
   }
 
+  componentDidUpdate(prevProps) {
+    const { editor, idToEdit, expenses } = this.props;
+
+    if (editor !== prevProps.editor && editor) {
+      const editingExpense = expenses.find((expense) => expense.id === idToEdit);
+      this.setState({
+        value: editingExpense.value,
+        description: editingExpense.description,
+        currency: editingExpense.currency,
+        method: editingExpense.method,
+        tag: editingExpense.tag,
+      });
+    }
+  }
+
   handleInputChange = ({ target }) => {
     const { name, value } = target;
 
@@ -61,6 +76,7 @@ class WalletForm extends Component {
   handleEditButton = () => {
     const { idToEdit, expenses } = this.props;
     const { value, description, currency, method, tag } = this.state;
+    const editingExpense = expenses.find((expense) => expense.id === idToEdit);
 
     const newExpense = {
       id: idToEdit,
@@ -69,7 +85,7 @@ class WalletForm extends Component {
       currency,
       method,
       tag,
-      exchangeRates: expenses[idToEdit].exchangeRates,
+      exchangeRates: editingExpense.exchangeRates,
     };
 
     const { dispatch } = this.props;
