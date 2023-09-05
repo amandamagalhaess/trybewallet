@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { BiEdit } from 'react-icons/bi';
+import { ImBin } from 'react-icons/im';
 import { activateEdit, removeExpense } from '../redux/actions';
+import '../style/Table.css';
 
 class Table extends Component {
   handleRemoveButton = (id) => {
@@ -51,13 +54,13 @@ class Table extends Component {
                     data-testid="edit-btn"
                     onClick={ () => this.handleEditButton(expense.id) }
                   >
-                    Editar
+                    <BiEdit />
                   </button>
                   <button
                     data-testid="delete-btn"
                     onClick={ () => this.handleRemoveButton(expense.id) }
                   >
-                    Excluir
+                    <ImBin />
                   </button>
                 </td>
               </tr>

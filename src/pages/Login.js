@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import PropTypes from 'prop-types';
 import { saveEmail } from '../redux/actions/index';
+import '../style/Login.css';
+import logo from '../style/imgs/logo Trybe Wallet.png';
 
 class Login extends React.Component {
   state = {
@@ -43,34 +45,39 @@ class Login extends React.Component {
     return (
       redirect ? <Redirect to="/carteira" /> : (
 
-        <form>
-          <label>
-            Email:
-            <input
-              type="email"
-              name="email"
-              data-testid="email-input"
-              onChange={ this.handleInputChange }
-            />
-          </label>
-          <label>
-            Senha:
-            <input
-              type="password"
-              name="password"
-              data-testid="password-input"
-              minLength={ 6 }
-              onChange={ this.handleInputChange }
-            />
-          </label>
-          <button
-            type="button"
-            disabled={ isButtonDisabled }
-            onClick={ this.handleLoginButton }
-          >
-            Entrar
-          </button>
-        </form>
+        <div className="login-page">
+          <form className="login-form">
+            <img src={ logo } alt="" />
+            <label className="email-label">
+
+              <input
+                type="email"
+                name="email"
+                data-testid="email-input"
+                placeholder="E-mail"
+                onChange={ this.handleInputChange }
+              />
+            </label>
+            <label className="password-label">
+
+              <input
+                type="password"
+                name="password"
+                data-testid="password-input"
+                minLength={ 6 }
+                placeholder="Senha"
+                onChange={ this.handleInputChange }
+              />
+            </label>
+            <button
+              type="button"
+              disabled={ isButtonDisabled }
+              onClick={ this.handleLoginButton }
+            >
+              Entrar
+            </button>
+          </form>
+        </div>
       )
     );
   }

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import '../style/Header.css';
+import { CgProfile } from 'react-icons/cg';
+import { FaCoins } from 'react-icons/fa';
+import logo from '../style/imgs/logo Trybe Wallet.png';
 
 class Header extends Component {
   expensesSum = () => {
@@ -18,18 +21,20 @@ class Header extends Component {
     const { emailState } = this.props;
     return (
       <header>
-        <img src="" alt="" />
-        <p>
-          Email:
+        <img src={ logo } alt="" />
+        <p className="total-field">
+          <FaCoins />
+          Despesa Total:
           {' '}
-          <span data-testid="email-field">{emailState}</span>
-        </p>
-        <p>
-          Despesa Total: R$
           {' '}
           <span data-testid="total-field">{this.expensesSum()}</span>
           {' '}
           <span data-testid="header-currency-field">BRL</span>
+        </p>
+        <p className="email-field">
+          <CgProfile />
+          {' '}
+          <span data-testid="email-field">{emailState}</span>
         </p>
       </header>
     );

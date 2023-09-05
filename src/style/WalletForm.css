@@ -1,0 +1,81 @@
+.expense-form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-grey {
+  background: rgba(225, 229, 235, 0.49);
+  height: 134px;
+  margin-bottom: 28px;
+  padding: 24px 106px 0 111px;
+  text-align: center;
+  width: 1037px;
+}
+
+.bg-grey label {
+  color: #003be5;
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.description-label input {
+  margin-right: 30px;
+  width: 288.86px;
+}
+
+.value-label input {
+  margin-right: 30px;
+  width: 158px;
+}
+
+.bg-grey label input , select {
+  background: none;
+  border: 1px solid #003be5;
+  border-radius: 5px;
+  color: #003be5;
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 30px;
+  margin-left: 5px;
+  padding-left: 7px;
+}
+
+.tag-label select {
+  width: 155px;
+}
+
+.method-label select {
+  margin-right: 30px;
+  width: 228px;
+}
+
+.currency-label select {
+  width: 91px;
+}
+
+.division {
+  height: 10px;
+}
+
+.expense-form button {
+  background: #2fc18c;
+  border: 1px solid #2fc18c;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  height: 40px;
+  text-align: center;
+  width: 330px;
+}
+
+.expense-form button:hover {
+  background: #2ca076;
+  border: 1px solid #2ca076;
+}
