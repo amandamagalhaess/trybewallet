@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/amandamagalhaess/trybewallet/static/css/main.c9b908ba.css",
-    "main.js": "/amandamagalhaess/trybewallet/static/js/main.78f591d7.js",
+    "main.js": "/amandamagalhaess/trybewallet/static/js/main.a1f675dc.js",
     "static/media/foto-fundo.png": "/amandamagalhaess/trybewallet/static/media/foto-fundo.124bb80c021d7c7ff56c.png",
     "index.html": "/amandamagalhaess/trybewallet/index.html",
     "main.c9b908ba.css.map": "/amandamagalhaess/trybewallet/static/css/main.c9b908ba.css.map",
-    "main.78f591d7.js.map": "/amandamagalhaess/trybewallet/static/js/main.78f591d7.js.map"
+    "main.a1f675dc.js.map": "/amandamagalhaess/trybewallet/static/js/main.a1f675dc.js.map"
   },
   "entrypoints": [
     "static/css/main.c9b908ba.css",
-    "static/js/main.78f591d7.js"
+    "static/js/main.a1f675dc.js"
   ]
 }
