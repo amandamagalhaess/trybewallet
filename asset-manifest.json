@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/amandamagalhaess/trybewallet/static/css/main.c9b908ba.css",
-    "main.js": "/amandamagalhaess/trybewallet/static/js/main.a1f675dc.js",
-    "static/media/foto-fundo.png": "/amandamagalhaess/trybewallet/static/media/foto-fundo.124bb80c021d7c7ff56c.png",
-    "index.html": "/amandamagalhaess/trybewallet/index.html",
-    "main.c9b908ba.css.map": "/amandamagalhaess/trybewallet/static/css/main.c9b908ba.css.map",
-    "main.a1f675dc.js.map": "/amandamagalhaess/trybewallet/static/js/main.a1f675dc.js.map"
+    "main.css": "/trybewallet/static/css/main.e97bb525.css",
+    "main.js": "/trybewallet/static/js/main.a1f675dc.js",
+    "static/media/foto-fundo.png": "/trybewallet/static/media/foto-fundo.124bb80c021d7c7ff56c.png",
+    "index.html": "/trybewallet/index.html",
+    "main.e97bb525.css.map": "/trybewallet/static/css/main.e97bb525.css.map",
+    "main.a1f675dc.js.map": "/trybewallet/static/js/main.a1f675dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9b908ba.css",
+    "static/css/main.e97bb525.css",
     "static/js/main.a1f675dc.js"
   ]
 }
