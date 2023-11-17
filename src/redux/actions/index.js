@@ -39,7 +39,8 @@ export const activateEdit = (id) => ({
 });
 
 export const editExpense = (expenses, expense) => {
-  expenses.splice(expense.id, 1, expense);
+  const index = expenses.findIndex((item) => item.id === expense.id);
+  expenses.splice(index, 1, expense);
   return ({
     type: 'EDIT_EXPENSE',
   });
