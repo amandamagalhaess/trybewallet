@@ -1,5 +1,6 @@
 {
   "name": "sd-0x-project-trybewallet",
+  "homepage": "https://github.com/amandamagalhaess/trybewallet",
   "version": "1.0.0",
   "private": true,
   "engines": {
@@ -29,7 +30,9 @@
     "eject": "react-scripts eject",
     "test-coverage": "react-scripts test --coverage --watchAll=false",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js,.jsx",
-    "lint:styles": "npx stylelint '**/*.css'"
+    "lint:styles": "npx stylelint '**/*.css'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +54,7 @@
     "@trybe/eslint-config-frontend": "^1.7.1",
     "cypress": "10.11.0",
     "cypress-multi-reporters": "1.6.2",
+    "gh-pages": "^6.0.0",
     "jest-localstorage-mock": "2.4.26",
     "mocha": "10.2.0",
     "mochawesome": "7.1.3",
